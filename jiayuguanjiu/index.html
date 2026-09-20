@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="嘉峪关酒店预订平台 - 提供嘉峪关市及周边优质酒店、民宿、景区住宿信息。涵盖嘉峪关关城、悬壁长城、长城第一墩等热门景点周边住宿推荐，包含房型介绍、价格对比及预订指南。">
+    <meta name="keywords" content="嘉峪关酒店, 嘉峪关住宿, 嘉峪关关城酒店, 嘉峪关景点住宿, 甘肃旅游住宿">
+    <title>嘉峪关酒店-丝路明珠精选住宿与预订指南</title>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #8B4513; /* 鞍褐色，呼应丝路与长城 */
+            --secondary-color: #D2B48C; /* 棕褐色 */
+            --accent-color: #C0392B; /* 朱砂红，呼应嘉峪关关楼 */
+            --bg-color: #F9F7F2; /* 米色宣纸感 */
+            --text-main: #2C2C2C;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(139, 69, 19, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: "PingFang SC", "Microsoft YaHei", "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--white);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-main);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .nav-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            padding: 8px 20px;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-outline:hover {
+            background-color: var(--primary-color);
+            color: var(--white);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            position: relative;
+            height: 500px;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://picsum.photos/seed/jiayuguan/1920/1080.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: var(--white);
+            margin-bottom: 40px;
+        }
+
+        .hero-content h1 {
+            font-size: 48px;
+            margin-bottom: 16px;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        .hero-content p {
+            font-size: 18px;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+
+        /* 搜索框 */
+        .search-box {
+            background: var(--white);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            display: flex;
+            gap: 15px;
+            box-shadow: var(--shadow);
+            max-width: 800px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .input-group {
+            flex: 1;
+            min-width: 200px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .input-group label {
+            font-size: 12px;
+            color: var(--text-light);
+            margin-bottom: 5px;
+        }
+
+        .input-group input {
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 14px;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: var(--white);
+            border: none;
+            padding: 12px 40px;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+            align-self: flex-end;
+            transition: background 0.3s;
+        }
+
+        .btn-primary:hover {
+            background-color: #6d360e;
+        }
+
+        /* 热门区域 */
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-title h2 {
+            font-size: 28px;
+            color: var(--text-main);
+            margin-bottom: 10px;
+        }
+
+        .section-title p {
+            color: var(--text-light);
+        }
+
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 25px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px;
+        }
+
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        /* 酒店卡片 */
+        .hotel-card {
+            background: var(--white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border: 1px solid #eee;
+        }
+
+        .hotel-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow);
+        }
+
+        .card-image {
+            height: 180px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: var(--accent-color);
+            color: var(--white);
+            padding: 4px 8px;
+            font-size: 12px;
+            border-radius: 2px;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .hotel-name {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+        }
+
+        .hotel-meta {
+            font-size: 13px;
+            color: var(--text-light);
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .rating {
+            color: #FFB400;
+            font-weight: bold;
+        }
+
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 15px;
+        }
+
+        .price {
+            color: var(--accent-color);
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .price span {
+            font-size: 12px;
+            font-weight: normal;
+            color: var(--text-light);
+        }
+
+        /* 特色分类 */
+        .categories-section {
+            background-color: var(--white);
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+
+        .category-item {
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: background 0.3s;
+            cursor: pointer;
+        }
+
+        .category-item:hover {
+            background-color: #f5f5f5;
+        }
+
+        .cat-icon {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .cat-name {
+            font-weight: 600;
+            color: var(--text-main);
+        }
+
+        /* 住宿指南 */
+        .guide-section {
+            padding: 60px 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .guide-text h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .guide-text p {
+            margin-bottom: 15px;
+            color: var(--text-light);
+        }
+
+        .guide-list li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-main);
+        }
+
+        .guide-list li::before {
+            content: "•";
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .guide-image {
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+
+        .guide-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* FAQ */
+        .faq-section {
+            background-color: #fff;
+            padding: 60px 0;
+            margin-top: 60px;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+
+        .faq-question {
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-answer {
+            margin-top: 10px;
+            color: var(--text-light);
+            display: none;
+            padding-left: 20px;
+            border-left: 3px solid var(--secondary-color);
+        }
+
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: #2C2C2C;
+            color: #ccc;
+            padding: 50px 0 20px;
+            margin-top: 80px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: var(--white);
+            margin-bottom: 20px;
+            font-size: 18px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--white);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            font-size: 14px;
+        }
+
+        /* 响应式 */
+        @media (max-width: 768px) {
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+            }
+
+            nav ul {
+                margin: 15px 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero-content h1 {
+                font-size: 32px;
+            }
+
+            .search-box {
+                flex-direction: column;
+            }
+
+            .btn-primary {
+                width: 100%;
+                align-self: stretch;
+            }
+
+            .category-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .guide-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>丝路</span>嘉峪关酒店
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#">热门推荐</a></li>
+                    <li><a href="#">景区住宿</a></li>
+                    <li><a href="#">商务出行</a></li>
+                    <li><a href="#">特价预订</a></li>
+                </ul>
+            </nav>
+            <div class="nav-actions">
+                <a href="#" class="btn-outline">登录</a>
+                <a href="#" class="btn-outline">注册</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>丝路明珠 · 酒店预订</h1>
+                <p>探索嘉峪关关城、悬壁长城，畅享丝路之旅的优质住宿体验</p>
+                
+                <div class="search-box">
+                    <div class="input-group">
+                        <label>目的地</label>
+                        <input type="text" placeholder="嘉峪关市 / 关城景区">
+                    </div>
+                    <div class="input-group">
+                        <label>入住日期</label>
+                        <input type="date">
+                    </div>
+                    <div class="input-group">
+                        <label>退房日期</label>
+                        <input type="date">
+                    </div>
+                    <button class="btn-primary">立即搜索</button>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <!-- 景区推荐 -->
+            <section class="section-header" style="margin-top: 60px;">
+                <div class="section-title" style="text-align: left; margin-bottom: 0;">
+                    <h2>热门景区周边酒店</h2>
+                    <p>距离主要景点步行或车程较近的优质住宿</p>
+                </div>
+                <a href="#" style="color: var(--primary-color); font-weight: 500;">查看全部 &rarr;</a>
+            </section>
+
+            <div class="grid-container">
+                <!-- Card 1 -->
+                <article class="hotel-card">
+                    <div class="card-image">
+                        <span class="badge">关城直通</span>
+                        <img src="https://picsum.photos/seed/hotel1/400/300" alt="嘉峪关关城附近酒店">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="hotel-name">嘉峪关关城迎宾客栈</h3>
+                        <div class="hotel-meta">
+                            <span class="rating">4.8分</span>
+                            <span>距关城步行10分钟</span>
+                        </div>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">提供地道甘肃风味早餐，房间干净整洁，是游览关城的理想下榻之地。</p>
+                        <div class="price-row">
+                            <div class="price">¥228<span>/晚</span></div>
+                            <a href="#" class="btn-outline" style="padding: 6px 15px; font-size: 12px;">预订</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="hotel-card">
+                    <div class="card-image">
+                        <span class="badge">悬壁长城</span>
+                        <img src="https://picsum.photos/seed/hotel2/400/300" alt="嘉峪关悬壁长城酒店">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="hotel-name">丝路长城宾馆</h3>
+                        <div class="hotel-meta">
+                            <span class="rating">4.5分</span>
+                            <span>距悬壁长城车程15分钟</span>
+                        </div>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">设施齐全，停车方便，适合自驾游客及商务出行人士。</p>
+                        <div class="price-row">
+                            <div class="price">¥268<span>/晚</span></div>
+                            <a href="#" class="btn-outline" style="padding: 6px 15px; font-size: 12px;">预订</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="hotel-card">
+                    <div class="card-image">
+                        <span class="badge">市中区</span>
+                        <img src="https://picsum.photos/seed/hotel3/400/300" alt="嘉峪关市中心酒店">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="hotel-name">嘉峪关国际大酒店</h3>
+                        <div class="hotel-meta">
+                            <span class="rating">4.9分</span>
+                            <span>位于市中心，交通便利</span>
+                        </div>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px；">高端商务型酒店，拥有完善的会议设施和餐饮服务。</p>
+                        <div class="price-row">
+                            <div class="price">¥458<span>/晚</span></div>
+                            <a href="#" class="btn-outline" style="padding: 6px 15px; font-size: 12px;">预订</a>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="hotel-card">
+                    <div class="card-image">
+                        <span class="badge">特色民宿</span>
+                        <img src="https://picsum.photos/seed/hotel4/400/300" alt="嘉峪关特色民宿">
+                    </div>
+                    <div class="card-content">
+                        <h3 class="hotel-name">戈壁星空主题民宿</h3>
+                        <div class="hotel-meta">
+                            <span class="rating">4.7分</span>
+                            <span>距市区10公里，环境清幽</span>
+                        </div>
+                        <p style="font-size: 13px; color: #666; margin-bottom: 10px;">体验大漠孤烟直的夜晚，提供篝火晚会服务，适合情侣及摄影爱好者。</p>
+                        <div class="price-row">
+                            <div class="price">¥320<span>/晚</span></div>
+                            <a href="#" class="btn-outline" style="padding: 6px 15px; font-size: 12px;">预订</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </div>
+
+        <!-- 酒店分类 -->
+        <section class="categories-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>按类型选择</h2>
+                    <p>满足您不同的旅行需求与预算</p>
+                </div>
+                <div class="category-grid">
+                    <div class="category-item">
+                        <span class="cat-icon">🏨</span>
+                        <div class="cat-name">星级酒店</div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🛌</span>
+                        <div class="cat-name">舒适经济</div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🏡</span>
+                        <div class="cat-name">特色民宿</div>
+                    </div>
+                    <div class="category-item">
+                        <span class="cat-icon">🚌</span>
+                        <div class="cat-name">交通便利</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 住宿指南 -->
+        <section class="guide-section container">
+            <div class="guide-grid">
+                <div class="guide-image">
+                    <img src="https://picsum.photos/seed/guide/600/400" alt="嘉峪关住宿指南">
+                </div>
+                <div class="guide-text">
+                    <h3>嘉峪关住宿全攻略</h3>
+                    <p>嘉峪关作为丝绸之路的重要节点，住宿选择丰富。如果您计划游览嘉峪关关城，建议选择景区附近的客栈，这样可以节省往返时间，在傍晚时分还能欣赏到夕阳下的关楼美景。</p>
+                    <ul class="guide-list">
+                        <li><strong>旺季建议：</strong>每年5月至10月是旅游旺季，热门酒店需提前预订。</li>
+                        <li><strong>价格区间：</strong>经济型酒店通常在150-300元/晚，星级酒店在400元以上。</li>
+                        <li><strong>交通枢纽：</strong>嘉峪关南站（高铁站）附近酒店较多，适合赶火车旅客。</li>
+                        <li><strong>自驾游客：</strong>可考虑市区或戈壁边缘的度假村，停车方便且视野开阔。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 常见问题 FAQ -->
+        <section class="faq-section">
+            <div class="container">
+                <div class="section-title">
+                    <h2>预订常见问题</h2>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item active">
+                        <div class="faq-question">嘉峪关市区到关城远吗？住宿选择多吗？ <span>+</span></div>
+                        <div class="faq-answer">嘉峪关市区到嘉峪关关城大约需要15-20分钟车程。市区内酒店选择非常多，从快捷酒店到五星级酒店一应俱全，完全能够满足不同旅客的需求。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">最佳住宿时间是哪几个月？ <span>+</span></div>
+                        <div class="faq-answer">嘉峪关气候干燥，夏季（6-8月）是旅游旺季，天气相对凉爽，适合游览。秋季（9-10月）天高气爽，景色最美。冬季较为寒冷，但游客较少，住宿价格会有优惠。</div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">住在关城附近有什么好处？ <span>+</span></div>
+                        <div class="faq-answer">住在关城附近最大的好处是方便。您可以避开景区周边的堵车高峰，早上去关门楼，晚上在景区附近散步，体验不一样的丝路夜色。</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="#">平台简介</a></li>
+                        <li><a href="#">合作酒店</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>预订指南</h4>
+                    <ul>
+                        <li><a href="#">预订流程</a></li>
+                        <li><a href="#">退改政策</a></li>
+                        <li><a href="#">常见问题</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>客户服务</h4>
+                    <ul>
+                        <li><a href="#">在线客服</a></li>
+                        <li><a href="#">电话预订</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>联系方式</h4>
+                    <ul>
+                        <li>电话：400-123-4567</li>
+                        <li>邮箱：service@jiayuguanhotels.com</li>
+                        <li>地址：甘肃省嘉峪关市新华路88号</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                &copy; 2023 丝路嘉峪关酒店预订平台 版权所有.
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // 简单的 FAQ 切换交互
+        document.querySelectorAll('.faq-question').forEach(item => {
+            item.addEventListener('click', event => {
+                const parent = item.parentElement;
+                parent.classList.toggle('active');
+                const icon = item.querySelector('span');
+                icon.textContent = parent.classList.contains('active') ? '-' : '+';
+            });
+        });
+
+        // 模拟搜索框点击反馈
+        document.querySelector('.btn-primary').addEventListener('click', function() {
+            const inputs = document.querySelectorAll('.input-group input');
+            let filled = true;
+            inputs.forEach(input => {
+                if(!input.value) filled = false;
+            });
+            if(filled) {
+                alert('正在为您搜索嘉峪关的优质住宿...');
+            } else {
+                alert('请完善您的入住和退房日期信息。');
+            }
+        });
+    </script>
+</body>
+  </html>
