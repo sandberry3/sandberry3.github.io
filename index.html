@@ -1,0 +1,672 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的美好人生 - 个人成长指南与生活美学</title>
+    <meta name="description" content="我的美好人生是一个专注于个人成长、生活美学与心理健康的生活服务平台。提供时间管理技巧、习惯养成方法、生活灵感以及实用的自我提升建议，帮助您构建更有意义的人生。">
+    <meta name="keywords" content="我的美好人生,个人成长,生活美学,时间管理,习惯养成,自我提升">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --accent-color: #e67e22;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+            --text-main: #333333;
+            --text-secondary: #666666;
+            --border-radius: 8px;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        /* 布局容器 */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* 顶部导航 */
+        header {
+            background-color: var(--card-bg);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-wrapper {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--accent-color);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-weight: 500;
+            color: var(--text-secondary);
+            transition: var(--transition);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--accent-color);
+        }
+
+        .search-btn {
+            background: none;
+            border: 1px solid #ddd;
+            padding: 8px 12px;
+            border-radius: 20px;
+            cursor: pointer;
+            color: var(--text-secondary);
+        }
+
+        .search-btn:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        /* Hero 区域 */
+        .hero {
+            background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+            padding: 80px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50px;
+            right: -50px;
+            width: 300px;
+            height: 300px;
+            background: rgba(230, 126, 34, 0.1);
+            border-radius: 50%;
+            z-index: 0;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-secondary);
+            margin-bottom: 40px;
+        }
+
+        .cta-group {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 126, 34, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: #d35400;
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            background-color: white;
+            color: var(--primary-color);
+            border: 2px solid #eee;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary-color);
+        }
+
+        /* 通用 Section */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            margin-bottom: 15px;
+        }
+
+        .section-header p {
+            color: var(--text-secondary);
+        }
+
+        /* 核心价值观 */
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .value-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .value-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .icon-box {
+            width: 60px;
+            height: 60px;
+            background-color: rgba(230, 126, 34, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-size: 1.5rem;
+            color: var(--accent-color);
+        }
+
+        .value-card h3 {
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+
+        .value-card p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 生活方式指南 */
+        .guides-wrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-card {
+            background: var(--card-bg);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .guide-card:hover {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+        }
+
+        .guide-img {
+            width: 100%;
+            height: 200px;
+            background-color: #eee;
+            object-fit: cover;
+        }
+
+        .guide-content {
+            padding: 25px;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #f0f0f0;
+            color: var(--text-secondary);
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-bottom: 10px;
+        }
+
+        .guide-content h3 {
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .guide-content p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+            margin-bottom: 20px;
+        }
+
+        .read-more {
+            color: var(--accent-color);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* 行动计划工具 */
+        .plan-section {
+            background-color: white;
+        }
+
+        .plan-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .plan-text {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .plan-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .plan-text ul {
+            margin-top: 20px;
+        }
+
+        .plan-text li {
+            margin-bottom: 15px;
+            padding-left: 20px;
+            position: relative;
+            color: var(--text-secondary);
+        }
+
+        .plan-text li::before {
+            content: '✓';
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .plan-form {
+            flex: 1;
+            min-width: 300px;
+            background-color: #fdfbfb;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: inset 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--primary-color);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-family: inherit;
+            transition: var(--transition);
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(230, 126, 34, 0.1);
+        }
+
+        /* FAQ */
+        .faq-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 20px;
+        }
+
+        .faq-item {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: var(--border-radius);
+            border-left: 4px solid var(--accent-color);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+        }
+
+        .faq-item h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+        }
+
+        .faq-item p {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        /* 页脚 */
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            color: var(--accent-color);
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: #bdc3c7;
+            transition: var(--transition);
+        }
+
+        .footer-col ul li a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 20px;
+            text-align: center;
+            color: #7f8c8d;
+            font-size: 0.9rem;
+        }
+
+        /* 响应式调整 */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-wrapper {
+                flex-direction: column;
+                height: auto;
+                padding: 15px 0;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                font-size: 0.9rem;
+            }
+
+            .faq-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav-wrapper">
+            <div class="logo">
+                <span>◆</span>我的美好人生
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">首页</a></li>
+                    <li><a href="#growth">成长指南</a></li>
+                    <li><a href="#lifestyle">生活方式</a></li>
+                    <li><a href="#tools">工具箱</a></li>
+                    <li><a href="#faq">常见问题</a></li>
+                </ul>
+            </nav>
+            <button class="search-btn" aria-label="搜索">🔍</button>
+        </div>
+    </header>
+
+    <!-- 首屏 Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <h1>掌控节奏，<br>创造属于你的美好人生</h1>
+            <p>无论当下的状态如何，通过科学的时间管理、心理调节和习惯养成，我们都能一步步构建一个更有序、更充实、更快乐的生活。</p>
+            <div class="cta-group">
+                <a href="#tools" class="btn btn-primary">开启改善计划</a>
+                <a href="#growth" class="btn btn-secondary">阅读成长文章</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 核心价值观 -->
+    <section id="growth">
+        <div class="container">
+            <div class="section-header">
+                <h2>构建美好人生的基石</h2>
+                <p>美好人生并非一蹴而就，而是由无数个积极的选择和微小的改变累积而成。</p>
+            </div>
+            <div class="values-grid">
+                <article class="value-card">
+                    <div class="icon-box">🧘</div>
+                    <h3>身心平衡</h3>
+                    <p>关注心理健康，通过冥想、运动和休息，保持身心的和谐统一，这是美好生活的起点。</p>
+                </article>
+                <article class="value-card">
+                    <div class="icon-box">📅</div>
+                    <h3>高效执行</h3>
+                    <p>掌握时间管理的核心技巧，将精力集中在真正重要的事情上，避免无效的忙碌。</p>
+                </article>
+                <article class="value-card">
+                    <div class="icon-box">📚</div>
+                    <h3>持续学习</h3>
+                    <p>保持好奇心，不断吸收新知识，拓展认知的边界，为人生提供源源不断的动力。</p>
+                </article>
+                <article class="value-card">
+                    <div class="icon-box">❤️</div>
+                    <h3>真诚连接</h3>
+                    <p>建立良好的人际关系，学会感恩与表达，在爱与被爱中获得归属感和幸福感。</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 生活方式指南 -->
+    <section id="lifestyle" style="background-color: #f0f2f5;">
+        <div class="container">
+            <div class="section-header">
+                <h2>生活美学与实用指南</h2>
+                <p>从日常习惯到环境布置，细节决定生活的品质。</p>
+            </div>
+            <div class="guides-wrapper">
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/life1/400/250" alt="极简收纳" class="guide-img">
+                    <div class="guide-content">
+                        <span class="tag">整理收纳</span>
+                        <h3>极简主义生活指南</h3>
+                        <p>如何通过断舍离清理生活空间，减少物质欲望，从而获得内心的宁静与自由。</p>
+                        <a href="#" class="read-more">阅读全文 →</a>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/life2/400/250" alt="晨间习惯" class="guide-img">
+                    <div class="guide-content">
+                        <span class="tag">习惯养成</span>
+                        <h3>黄金一小时晨间仪式</h3>
+                        <p>利用早晨的时间进行阅读、运动或规划，为一天注入正向能量和清晰的目标感。</p>
+                        <a href="#" class="read-more">阅读全文 →</a>
+                    </div>
+                </article>
+                <article class="guide-card">
+                    <img src="https://picsum.photos/seed/life3/400/250" alt="饮食健康" class="guide-img">
+                    <div class="guide-content">
+                        <span class="tag">健康饮食</span>
+                        <h3>轻食主义与营养搭配</h3>
+                        <p>告别重油重盐，学习如何用简单的食材制作营养均衡的餐食，提升身体活力。</p>
+                        <a href="#" class="read-more">阅读全文 →</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- 互动工具 -->
+    <section id="tools" class="plan-section">
+        <div class="container">
+            <div class="plan-container">
+                <div class="plan-text">
+                    <h3>制定你的年度目标</h3>
+                    <p>美好人生需要清晰的路线图。通过简单的目标设定，我们可以将宏大的愿望拆解为可执行的步骤，每一步的达成都是对美好生活的肯定。</p>
+                    <ul>
+                        <li>设定清晰、可衡量的目标</li>
+                        <li>分解为短期和长期行动计划</li>
+                        <li>建立定期复盘与调整机制</li>
+                    </ul>
+                </div>
+                <div class="plan-form">
+                    <form onsubmit="event.preventDefault(); alert('感谢您的参与！您的目标规划已提交。');">
+                        <div class="form-group">
+                            <label for="goal">今年最重要的一个目标是什么？</label>
+                            <input type="text" id="goal" placeholder="例如：读完50本书 / 减重10斤 / 学习一门新语言" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="plan">为了达成这个目标，你打算做些什么？</label>
+                            <textarea id="plan" rows="3" placeholder="写下你的初步想法..." required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">提交规划</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 常见问题 -->
+    <section id="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>常见问题解答</h2>
+                <p>关于构建美好人生，您可能关心的几个问题。</p>
+            </div>
+            <div class="faq-grid">
+                <div class="faq-item">
+                    <h4>如何开始改变糟糕的生活习惯？</h4>
+                    <p>不要试图一次性改变所有习惯。从最简单的一个习惯开始，例如每天早起10分钟或每天阅读10页书，坚持21天，让新行为成为下意识反应。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>感觉生活没有意义怎么办？</h4>
+                    <p>意义往往在行动中产生。尝试去做一些帮助他人的小事，或者投入一项你真正热爱的爱好。通过创造价值来获得自我认同感。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>时间管理工具真的有用吗？</h4>
+                    <p>工具是辅助，关键在于执行力。选择一个你容易上手的工具，并将其融入你的工作流中，定期记录时间开销，才能发现问题所在。</p>
+                </div>
+                <div class="faq-item">
+                    <h4>如何在忙碌的工作中保持生活品质？</h4>
+                    <p>关键在于“留白”。每天必须抽出一段不受打扰的时间，用来独处或放松，这是给心灵充电的重要时刻。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>关于我的美好人生</h4>
+                    <p style="color: #bdc3c7; font-size: 0.9rem; line-height: 1.8;">
+                        我们致力于分享实用的生活智慧与成长方法，陪伴每一位追求更好自我的你，共同探索生活的无限可能。
+                    </p>
+                </div>
+                <div class="footer-col">
+                    <h4>快速导航</h4>
+                    <ul>
+                        <li><a href="#growth">个人成长</a></li>
+                        <li><a href="#lifestyle">生活美学</a></li>
+                        <li><a href="#tools">目标规划</a></li>
+                        <li><a href="#faq">帮助中心</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>关注我们</h4>
+                    <ul>
+                        <li><a href="#">微信公众号</a></li>
+                        <li><a href="#">微博账号</a></li>
+                        <li><a href="#">邮箱订阅</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 我的美好人生 版权所有. 本站内容仅供学习与参考。</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+  </html>
