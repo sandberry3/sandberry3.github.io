@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>百万亚瑟王充值-安全便捷的卡牌游戏充值服务平台</title>
+    <meta name="description" content="提供百万亚瑟王官方正版充值服务，支持iOS及Android多渠道，安全稳定，秒级到账，7x24小时在线客服。包含新手充值指南、卡牌兑换码及游戏攻略资讯。">
+    <meta name="keywords" content="百万亚瑟王充值,百万亚瑟王,游戏充值,卡牌游戏,亚瑟王">
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #f0f4f8;
+            --accent-color: #d4a373;
+            --text-dark: #333333;
+            --text-gray: #666666;
+            --bg-body: #ffffff;
+            --bg-card: #ffffff;
+            --border-radius: 8px;
+            --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 12px rgba(0,0,0,0.08);
+            --container-width: 1200px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.2s;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo span {
+            color: var(--text-dark);
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            font-size: 16px;
+            font-weight: 500;
+            color: var(--text-dark);
+        }
+
+        nav a:hover, nav a.active {
+            color: var(--primary-color);
+        }
+
+        .header-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 8px 20px;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--primary-color);
+            color: var(--primary-color);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: var(--primary-color);
+            color: #fff;
+        }
+
+        .btn-primary {
+            background: var(--primary-color);
+            color: #fff;
+            border: 1px solid var(--primary-color);
+        }
+
+        .btn-primary:hover {
+            background: #3a5c8a;
+            border-color: #3a5c8a;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #eef2f3 0%, #d9e2ec 100%);
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-tags {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background: rgba(255,255,255,0.8);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 13px;
+            color: var(--text-gray);
+        }
+
+        /* Features */
+        .features {
+            padding: 40px 0;
+            background: #fff;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item {
+            text-align: center;
+            padding: 20px;
+            border-radius: var(--border-radius);
+            transition: transform 0.2s;
+        }
+
+        .feature-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .feature-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        .feature-desc {
+            font-size: 14px;
+            color: var(--text-gray);
+        }
+
+        /* Main Content Layout */
+        .main-layout {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 40px;
+            padding: 40px 0;
+        }
+
+        @media (max-width: 900px) {
+            .main-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Section Titles */
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 25px;
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+        }
+
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-dark);
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--primary-color);
+            border-radius: 2px;
+        }
+
+        /* Game List */
+        .game-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 20px;
+        }
+
+        .game-card {
+            background: var(--bg-card);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .game-card:hover {
+            border-color: var(--primary-color);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .game-icon {
+            width: 64px;
+            height: 64px;
+            background: #f0f0f0;
+            border-radius: 50%;
+            margin: 0 auto 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #888;
+        }
+
+        .game-name {
+            font-size: 15px;
+            font-weight: 600;
+        }
+
+        /* Recharge Form */
+        .recharge-panel {
+            background: var(--bg-card);
+            border: 1px solid #eee;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            box-shadow: var(--shadow-sm);
+            position: sticky;
+            top: 90px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            font-size: 14px;
+        }
+
+        .input-control {
+            width: 100%;
+            padding: 10px 12px;
+            border: 1px solid #ddd;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            outline: none;
+        }
+
+        .input-control:focus {
+            border-color: var(--primary-color);
+        }
+
+        .recharge-amounts {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .amount-btn {
+            padding: 10px;
+            border: 1px solid #ddd;
+            background: #fff;
+            border-radius: var(--border-radius);
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .amount-btn:hover, .amount-btn.active {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            background: rgba(74, 111, 165, 0.05);
+        }
+
+        .total-price {
+            text-align: right;
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--text-dark);
+            margin-bottom: 20px;
+        }
+
+        .total-price span {
+            color: var(--primary-color);
+            font-size: 24px;
+        }
+
+        .recharge-submit {
+            width: 100%;
+            padding: 14px;
+            background: var(--primary-color);
+            color: #fff;
+            border: none;
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .recharge-submit:hover {
+            background: #3a5c8a;
+        }
+
+        /* Guide Section */
+        .guide-section {
+            background: var(--secondary-color);
+            padding: 50px 0;
+        }
+
+        .guide-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .guide-card {
+            background: #fff;
+            padding: 30px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .guide-card h3 {
+            font-size: 18px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .guide-card p {
+            font-size: 14px;
+            color: var(--text-gray);
+            margin-bottom: 15px;
+        }
+
+        .guide-link {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .guide-link::after {
+            content: '→';
+            margin-left: 5px;
+            transition: transform 0.2s;
+        }
+
+        .guide-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Footer */
+        footer {
+            background: #2c3e50;
+            color: #bdc3c7;
+            padding: 50px 0 20px;
+            font-size: 14px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            color: #fff;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a:hover {
+            color: #fff;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+
+        /* Mobile Nav */
+        .mobile-menu-btn {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 28px;
+            }
+            .header-actions .btn {
+                display: none;
+            }
+            .recharge-panel {
+                position: static;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <a href="#" class="logo">
+            <span>👑</span> 艾索德充能站
+        </a>
+        <nav>
+            <ul>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#games">热门游戏</a></li>
+                <li><a href="#guide">充值指南</a></li>
+                <li><a href="#news">资讯动态</a></li>
+                <li><a href="#faq">常见问题</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <a href="#" class="btn btn-outline">登录</a>
+            <a href="#" class="btn btn-primary">注册账号</a>
+        </div>
+        <div class="mobile-menu-btn">☰</div>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container">
+        <h1>百万亚瑟王充值平台</h1>
+        <p>安全、稳定、快速的一站式卡牌游戏充值服务，支持iOS及安卓多渠道，让您轻松享受游戏乐趣。</p>
+        <div class="hero-tags">
+            <span class="tag">官方直充</span>
+            <span class="tag">秒级到账</span>
+            <span class="tag">7x24小时客服</span>
+            <span class="tag">安全保障</span>
+        </div>
+    </div>
+</section>
+
+<section class="features">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-item">
+                <span class="feature-icon">🛡️</span>
+                <h3 class="feature-title">安全交易保障</h3>
+                <p class="feature-desc">采用SSL加密传输，资金托管交易，全程监控，确保您的每一笔充值都安全无忧。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">⚡</span>
+                <h3 class="feature-title">极速到账服务</h3>
+                <p class="feature-desc">人工/系统双重审核，确认支付后立即执行充值，平均等待时间不超过3分钟。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">📱</span>
+                <h3 class="feature-title">多端全覆盖</h3>
+                <p class="feature-desc">完美支持iOS App Store、Android 各大应用商店及官方安卓客户端充值。</p>
+            </div>
+            <div class="feature-item">
+                <span class="feature-icon">💬</span>
+                <h3 class="feature-title">专业客服支持</h3>
+                <p class="feature-desc">全天候在线客服团队，耐心解答充值流程、订单查询及技术问题。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<main class="container main-layout">
+    <!-- 左侧：充值区域 -->
+    <section id="games">
+        <div class="section-header">
+            <h2 class="section-title">选择游戏进行充值</h2>
+        </div>
+        
+        <div class="game-list">
+            <div class="game-card" onclick="selectGame('百万亚瑟王')">
+                <div class="game-icon">👑</div>
+                <div class="game-name">百万亚瑟王</div>
+            </div>
+            <div class="game-card" onclick="selectGame('Fate/Grand Order')">
+                <div class="game-icon">🔮</div>
+                <div class="game-name">Fate/Grand Order</div>
+            </div>
+            <div class="game-card" onclick="selectGame('剑与魔法')">
+                <div class="game-icon">⚔️</div>
+                <div class="game-name">剑与魔法</div>
+            </div>
+            <div class="game-card" onclick="selectGame('皇室战争')">
+                <div class="game-icon">🏰</div>
+                <div class="game-name">皇室战争</div>
+            </div>
+            <div class="game-card" onclick="selectGame('炉石传说')">
+                <div class="game-icon">🔥</div>
+                <div class="game-name">炉石传说</div>
+            </div>
+            <div class="game-card" onclick="selectGame('影之诗')">
+                <div class="game-icon">🌙</div>
+                <div class="game-name">影之诗</div>
+            </div>
+        </div>
+
+        <div class="section-header" style="margin-top: 40px;">
+            <h2 class="section-title">选择充值金额</h2>
+        </div>
+
+        <div class="recharge-panel">
+            <div class="form-group">
+                <label class="form-label">选择游戏</label>
+                <input type="text" id="selectedGame" class="input-control" value="百万亚瑟王" readonly>
+            </div>
+            
+            <div class="form-group">
+                <label class="form-label">选择渠道</label>
+                <select class="input-control">
+                    <option value="ios">iOS App Store</option>
+                    <option value="android">安卓官方包</option>
+                    <option value="hon">鸿蒙系统</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label">选择面额</label>
+                <div class="recharge-amounts">
+                    <button class="amount-btn" onclick="selectAmount(6)">6元</button>
+                    <button class="amount-btn" onclick="selectAmount(30)">30元</button>
+                    <button class="amount-btn active" onclick="selectAmount(98)">98元</button>
+                    <button class="amount-btn" onclick="selectAmount(198)">198元</button>
+                    <button class="amount-btn" onclick="selectAmount(328)">328元</button>
+                    <button class="amount-btn" onclick="selectAmount(648)">648元</button>
+                </div>
+            </div>
+
+            <div class="total-price">
+                实付金额：<span id="priceDisplay">98</span> <small>元</small>
+            </div>
+
+            <button class="recharge-submit" onclick="alert('请选择支付方式并完成支付。')">立即充值</button>
+            <p style="font-size: 12px; color: #999; text-align: center; margin-top: 15px;">
+                支持微信支付、支付宝、云闪付
+            </p>
+        </div>
+    </section>
+
+    <!-- 右侧：侧边栏 -->
+    <aside>
+        <!-- 快捷入口 -->
+        <div style="background: #fff; padding: 20px; border-radius: 8px; margin-bottom: 20px; border: 1px solid #eee;">
+            <h3 style="font-size: 16px; margin-bottom: 15px;">快捷入口</h3>
+            <ul style="font-size: 14px; color: var(--text-gray);">
+                <li style="margin-bottom: 10px;"><a href="#">查看充值记录</a></li>
+                <li style="margin-bottom: 10px;"><a href="#">找回订单号</a></li>
+                <li style="margin-bottom: 10px;"><a href="#">联系人工客服</a></li>
+                <li><a href="#">提交充值bug反馈</a></li>
+            </ul>
+        </div>
+
+        <!-- 兑换码 -->
+        <div style="background: linear-gradient(to right, #4a6fa5, #7aa0d1); padding: 20px; border-radius: 8px; color: #fff;">
+            <h3 style="font-size: 16px; margin-bottom: 10px;">🎁 新用户礼包</h3>
+            <p style="font-size: 12px; opacity: 0.9; margin-bottom: 15px;">注册即送首充双倍优惠券，充值立享优惠。</p>
+            <a href="#" style="font-size: 14px; background: #fff; color: var(--primary-color); padding: 8px 15px; border-radius: 4px; display: inline-block; font-weight: 600;">领取优惠</a>
+        </div>
+    </aside>
+</main>
+
+<section class="guide-section" id="guide">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">充值新手指南</h2>
+        </div>
+        <div class="guide-grid">
+            <div class="guide-card">
+                <h3>📱 如何填写账号</h3>
+                <p>请确保输入的账号与游戏内绑定的账号完全一致。iOS用户通常为Apple ID邮箱，安卓用户为游戏内账号ID或手机号。</p>
+                <a href="#" class="guide-link">查看详细教程</a>
+            </div>
+            <div class="guide-card">
+                <h3>⏱️ 到账时间说明</h3>
+                <p>系统充值通常在支付成功后1-3分钟内到账。如遇游戏服务器维护或网络波动，可能会延迟至30分钟内。</p>
+                <a href="#" class="guide-link">查看常见延迟问题</a>
+            </div>
+            <div class="guide-card">
+                <h3>💰 支付安全提示</h3>
+                <p>请勿向陌生人转账，本平台所有支付均为第三方支付平台直接跳转，不会直接要求您提供支付密码。</p>
+                <a href="#" class="guide-link">了解安全防护</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container" style="padding: 50px 0;">
+    <div class="section-header">
+        <h2 class="section-title">常见问题 (FAQ)</h2>
+    </div>
+    <div style="max-width: 800px;">
+        <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">充值成功但游戏内没有收到钻石怎么办？</summary>
+            <p style="margin-top: 10px; color: var(--text-gray);">请先刷新游戏页面，或检查账号是否填写正确。如果10分钟后仍未到账，请联系客服并提供充值订单号进行人工补单。</p>
+        </details>
+        <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">支持哪些支付方式？</summary>
+            <p style="margin-top: 10px; color: var(--text-gray);">目前支持微信支付、支付宝、银联云闪付等主流支付方式，确保您的资金安全便捷。</p>
+        </details>
+        <details style="margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 15px;">
+            <summary style="font-weight: 600; cursor: pointer; color: var(--text-dark);">充值有优惠吗？</summary>
+            <p style="margin-top: 10px; color: var(--text-gray)；">平台不定期会推出充值返利活动，新用户注册可领取首充双倍优惠券，具体活动请留意首页公告。</p>
+        </details>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>关于我们</h4>
+                <p style="color: #bdc3c7; font-size: 13px; line-height: 1.8;">
+                    艾索德充能站致力于为卡牌游戏玩家提供最便捷、最安全的充值服务体验。我们专注于各类二次元及策略卡牌游戏的代充业务。
+                </p>
+            </div>
+            <div class="footer-col">
+                <h4>快速链接</h4>
+                <ul>
+                    <li><a href="#">游戏充值</a></li>
+                    <li><a href="#">充值记录</a></li>
+                    <li><a href="#">订单查询</a></li>
+                    <li><a href="#">联系客服</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>帮助中心</h4>
+                <ul>
+                    <li><a href="#">充值常见问题</a></li>
+                    <li><a href="#">支付方式说明</a></li>
+                    <li><a href="#">账号安全指南</a></li>
+                    <li><a href="#">隐私政策</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>联系客服</h4>
+                <ul>
+                    <li>工作时间：9:00 - 22:00</li>
+                    <li>在线客服：点击进入</li>
+                    <li>客服邮箱：support@example.com</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2023 艾索德充能站 版权所有 | 本站仅为游戏充值信息展示平台，非游戏官方</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+    // 简单的金额选择交互
+    function selectAmount(amount) {
+        // 移除所有active类
+        document.querySelectorAll('.amount-btn').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        // 添加active类到当前点击的按钮
+        event.target.classList.add('active');
+        // 更新显示价格
+        document.getElementById('priceDisplay').textContent = amount;
+    }
+
+    // 简单的游戏选择交互
+    function selectGame(gameName) {
+        document.getElementById('selectedGame').value = gameName;
+        // 这里可以添加逻辑来切换不同的价格表，这里仅做演示
+        console.log("选择了游戏: " + gameName);
+    }
+
+    // 移动端菜单切换（简单模拟）
+    document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+        const nav = document.querySelector('nav');
+        if (nav.style.display === 'block') {
+            nav.style.display = 'none';
+        } else {
+            nav.style.display = 'block';
+            nav.style.position = 'absolute';
+            nav.style.top = '70px';
+            nav.style.left = '0';
+            nav.style.width = '100%';
+            nav.style.background = '#fff';
+            nav.style.padding = '20px';
+            nav.style.boxShadow = '0 4px 6px rgba(0,0,0,0.1)';
+        }
+    });
+</script>
+
+</body>
+</html>
